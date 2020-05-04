@@ -7,7 +7,7 @@
     {
         readonly ILog logger = new TacoLogger();
         
-        public ITrackable Parse(string line)
+        public ITrackable Parse(string line) // ITrackable = return type
         {
             logger.LogInfo("Begin parsing");
 
@@ -22,23 +22,43 @@
                 return null; // TODO Implement
             }
 
-            // grab the latitude from your array at index 0
-            // grab the longitude from your array at index 1
-            // grab the name from your array at index 2
+            //DONE grab the latitude from your array at index 0
+            double lat = 0;
+            if(!double.TryParse(cells[0], out lat) == false)
+            {
+                logger.LogError("Bad data - wasn't able to parse as double.");
+            }
+            //DONE grab the longitude from your array at index 1
+            double longitude = 0;
+            if(!double.TryParse(cells[1], out longitude) == false)
+            {
+                logger.LogError("Bad data - wasn't able to parse as double.");
+            }
+            //DONE grab the name from your array at index 2
+            var name = cells[2];
+            // DONEYour going to need to parse your string as a `double`
+            // DONE which is similar to parsing a string as an `int`
 
-            // Your going to need to parse your string as a `double`
-            // which is similar to parsing a string as an `int`
 
-            // You'll need to create a TacoBell class
-            // that conforms to ITrackable
+            // DONE You'll need to create a TacoBell class that conforms to ITrackable
 
             // Then, you'll need an instance of the TacoBell class
             // With the name and point set correctly
 
-            // Then, return the instance of your TacoBell class
-            // Since it conforms to ITrackable
+            var tacobell = new TacoBell();
+            tacobell.Name = name;
+            var point = new Point();
+            point.Latitude = lat;
+            point.Longitude = longitude;
+            tacobell.Location = point;
+            
 
-            return null;
+            // ***Do we choose a name, coordinates here or leave as-is?
+
+
+            //DONE Then, return the instance of your TacoBell class
+            //DONE Since it conforms to ITrackable
+            return tacobell;
         }
     }
 }

@@ -3,6 +3,10 @@ using System.Linq;
 using System.IO;
 using GeoCoordinatePortable;
 
+/* 1. Start with your unit tests
+2. Next, complete the Parse() method
+3. Complete Program.cs */
+
 namespace LoggingKata
 {
     class Program
