@@ -23,14 +23,14 @@
             }
 
             //DONE grab the latitude from your array at index 0
-            double lat = 0;
-            if(!double.TryParse(cells[0], out lat) == false)
+            double latitude = 0;
+            if(double.TryParse(cells[0], out latitude) == false)
             {
                 logger.LogError("Bad data - wasn't able to parse as double.");
             }
             //DONE grab the longitude from your array at index 1
             double longitude = 0;
-            if(!double.TryParse(cells[1], out longitude) == false)
+            if(double.TryParse(cells[1], out longitude) == false)
             {
                 logger.LogError("Bad data - wasn't able to parse as double.");
             }
@@ -48,14 +48,11 @@
             var tacobell = new TacoBell();
             tacobell.Name = name;
             var point = new Point();
-            point.Latitude = lat;
+            point.Latitude = latitude;
             point.Longitude = longitude;
             tacobell.Location = point;
             
-
             // ***Do we choose a name, coordinates here or leave as-is?
-
-
             //DONE Then, return the instance of your TacoBell class
             //DONE Since it conforms to ITrackable
             return tacobell;
