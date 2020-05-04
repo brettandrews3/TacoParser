@@ -6,6 +6,18 @@ namespace LoggingKata.Test
 {
     public class TacoParserTests
     {
+        [Theory]
+        [InlineData(591949.44, 367.82)]
+        public void ConvertMetersToMiles(double meters, double expected)
+        {
+            //Arrange
+            var distanceToMiles = new TacoParser();
+            //Act
+            var actual = distanceToMiles.ConvertMetersToMiles(meters);
+            //Assert
+            //expected, actual
+            Assert.Equal(expected, actual);
+        }
         [Fact]
         public void ShouldDoSomething()
         {

@@ -1,4 +1,6 @@
-﻿namespace LoggingKata
+﻿using System;
+
+namespace LoggingKata
 {
     /// <summary>
     /// Parses a POI file to locate all the Taco Bells
@@ -6,7 +8,11 @@
     public class TacoParser
     {
         readonly ILog logger = new TacoLogger();
-        
+        // var distanceInMiles = distanceInMetres / 1609;
+        public double ConvertMetersToMiles(double meters)
+        {
+            return Math.Round(meters / 1609.344, 2);
+        }
         public ITrackable Parse(string line) // ITrackable = return type
         {
             logger.LogInfo("Begin parsing");
@@ -57,5 +63,6 @@
             //DONE Since it conforms to ITrackable
             return tacobell;
         }
+
     }
 }

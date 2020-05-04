@@ -71,19 +71,25 @@ namespace LoggingKata
                     }
                 }
             }
-            // Create a new corA Coordinate with your locA's lat and long
+            logger.LogInfo($"The two locations furthest away from each other " +
+                $"are {tacobell1.Name} and {tacobell2.Name}, with a distance of {parser.ConvertMetersToMiles(distance)} miles.");
+            //DONE Create a new corA Coordinate with your locA's lat and long
 
-            // Now, do another loop on the locations with the scope of your first loop, so you can grab the "destination" location (perhaps: `locB`)
+            //DONE Now, do another loop on the locations with the scope of your first loop, so you can grab the "destination" location (perhaps: `locB`)
 
-            // Create a new Coordinate with your locB's lat and long
+            //DONE Create a new Coordinate with your locB's lat and long
 
-            // Now, compare the two using `.GetDistanceTo()`, which returns a double
-            // If the distance is greater than the currently saved distance, update the distance and the two `ITrackable` variables you set above
+            //DONE Now, compare the two using `.GetDistanceTo()`, which returns a double
+            //DONE If the distance is greater than the currently saved distance, update the distance and the two `ITrackable` variables you set above
 
-            // Once you've looped through everything, you've found the two Taco Bells furthest away from each other.
+            //DONE Once you've looped through everything, you've found the two Taco Bells furthest away from each other.
 
+            /* Convert the distance to miles. Round to 2 decimal places.
+            Create a method to convert metres to miles in the TacoParser class
+            Write a unit test for the method in your tests
+            Implement method in Program.cs */
+            // Conversion: "var distanceInMiles = distanceInMetres / 1609;"
 
-            
         }
     }
 }
