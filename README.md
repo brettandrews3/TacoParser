@@ -2,6 +2,12 @@
 
 An exercise in geolocation, csv parsing, and logging
 
+## An Explanation of How It Works - Brett A.
+
+In this project, I evaluate 200 pairs of GPS coordinates against each other in order to find the two Taco Bell locations that are furthest apart. Using a .CSV file to hold the coordinate pairs, I feed the data into TacoParserTests to confirm the latitude and longitude for each location; the TacoLogger catches any incorrect values (e.g., not latitude or longitude) to prevent the program from crashing. 
+
+Next, the Main program takes over to parse through each coordinate pair, using nested for loops to place one coordinate pair to store the first location, then running each of the other locations against that first pair to find the maximum distance across all possible location pairs. Finally, the logger method converts the distance variable from meters to miles and prints the final paired results to the console.
+
 ## Kata Overview
 
 Here's what you'll need to do for this Kata:
